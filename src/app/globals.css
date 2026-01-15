@@ -1,12 +1,52 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --white: #e6e6e6;
+  --black: #242424;
+  --light: #b6b6b6;
+  --medium: #858585;
+  --dark: #353535;
+  --accent: var(--dark);
+  --accent-light: var(--light);
+  --loading-light: rgba(182, 182, 182, 0.5);
+  --loading-dark: rgba(36, 36, 36, 0.5);
+
+  /* Typography */
+  --font-size: 16px;
+
+  /* UI */
+  --border-thick: 3px solid var(--primary);
+  --border-medium: 2px solid var(--primary);
+  --border-thin: 1px solid var(--primary);
+
+  --box-shadow: 5px 5px 10px 0 rgba(36, 36, 36, 0.4);
+
+  /* Layout */
+  --max-width: 1095px;
+  --medium-width: 1000px;
+  --padding: 1rem;
+  --header-height: 55px;
+  --filters-height: 131.5px;
+  --mobile-menu-close-button-height: 67.5px;
+  --mobile-filters-button-height: 69.5px;
+  --mobile-searchbar-height: 75.5px;
+
+  --scrollbar-width: 16px;
+
+  /* Theme */
+  --primary: var(--black);
+  --secondary: var(--white);
 }
 
-@media (prefers-color-scheme: dark) {
+@media (min-width: 768px) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --filters-height: 292px;
+    /* --header-height: 55px; */
+    --scrollbar-width: 12px;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --filters-height: 220px;
   }
 }
 
@@ -14,29 +54,165 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  font-size: var(--font-size);
+  font-weight: 400;
+  height: 100vh;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--primary);
+  background: var(--secondary);
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  text-transform: lowercase;
 }
 
 a {
   color: inherit;
-  text-decoration: none;
+  text-decoration: underline;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.3;
+  &:hover {
+    cursor: pointer !important;
+    color: var(--accent);
+  }
+  &:focus {
+    outline: 1px solid var(--primary);
+    outline-offset: 2px;
+  }
+  @media (min-width: 768px) {
+    cursor: pointer !important;
+    font-size: 16px;
+    /* line-height: 1.5; */
+  }
+}
+
+button {
+  &:focus {
+    outline: 1px solid var(--primary);
+    outline-offset: 2px;
+  }
+}
+
+p {
+  font-size: 14px;
+  line-height: 1.3;
+  font-weight: 500;
+  margin-bottom: 8px;
+  @media (min-width: 768px) {
+    font-size: var(--font-size);
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+}
+
+h1,
+.h1 {
+  font-size: 36px;
+  letter-spacing: -1px;
+  line-height: 1.2;
+  font-weight: 700;
+  margin: 0;
+
+  @media (min-width: 768px) {
+    font-size: 38px;
+    letter-spacing: -1.5px;
+    line-height: 1;
+  }
+}
+
+h2,
+.h2 {
+  font-weight: 500;
+  letter-spacing: -0.5px;
+  line-height: 1;
+  font-size: 28px;
+  @media (min-width: 768px) {
+    letter-spacing: -1px;
+    font-size: 32px;
+  }
+}
+
+h3,
+.h3 {
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+  line-height: 1;
+  @media (min-width: 768px) {
+    font-size: 24px;
+  }
+}
+
+h4,
+.h4 {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+  @media (min-width: 768px) {
+    font-size: 20px;
+  }
+}
+
+h5,
+.h5 {
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 1;
+}
+
+h6,
+.h6 {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
 }
 
 @media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+  :root {
+    --primary: var(--white);
+    --secondary: var(--black);
   }
+  body a {
+    &:hover {
+      color: var(--light);
+    }
+  }
+}
+
+body[data-theme='dark'] {
+  --primary: var(--white);
+  --secondary: var(--black);
+  a {
+    &:hover {
+      color: var(--light);
+    }
+  }
+}
+
+body[data-theme='light'] {
+  --primary: var(--black);
+  --secondary: var(--white);
 }

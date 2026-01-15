@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import Header from '@/components/layout/Header/Header'
+import styles from './page.module.css'
 
 const inter = Inter({
   variable: '--font-inter',
@@ -21,7 +23,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={`${inter.variable}`}>{children}</body>
+      <body className={`${inter.variable}`}>
+        <div className={styles.screen}>
+          <Header />
+          {children}
+        </div>
+      </body>
     </html>
   )
 }
