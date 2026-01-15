@@ -4,6 +4,8 @@
   --light: #b6b6b6;
   --medium: #858585;
   --dark: #353535;
+  --transparent-white: rgba(230, 230, 230, 0.5);
+  --transparent-black: rgba(36, 36, 36, 0.5);
   --accent: var(--dark);
   --accent-light: var(--light);
   --loading-light: rgba(182, 182, 182, 0.5);

@@ -1,0 +1,17 @@
+.container {
+  width: 100%;
+  height: auto;
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid {
+  width: auto;
+  margin: 0 auto;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 65px);
+  gap: 26px;
+}
