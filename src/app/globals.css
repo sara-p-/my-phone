@@ -20,6 +20,8 @@
   --border-thin: 1px solid var(--primary);
 
   --box-shadow: 5px 5px 10px 0 rgba(36, 36, 36, 0.4);
+  --text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.1),
+    1px 1px 1px rgba(36, 36, 36, 0.5), 2px 2px 2px rgba(36, 36, 36, 0.5);
 
   /* Layout */
   --max-width: 1095px;
