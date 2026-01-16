@@ -8,7 +8,7 @@ export default function AppGrid() {
     <div className={styles.container}>
       <div className={styles.grid}>
         {APP_TYPES.map((app: AppType, index: number) => (
-          <AppButton key={index} icon={app.icon} label={app.label} name={app.name} />
+          <AppButton key={index} icon={app.icon} label={app.label} name={app.name} path={app.path} />
         ))}
       </div>
     </div>

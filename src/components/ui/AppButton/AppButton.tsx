@@ -4,9 +4,10 @@ import Image from 'next/image'
 import { useAtom } from 'jotai'
 import { appStateAtom } from '@/atoms'
 import { AppType } from '@/types/appTypes'
+import Link from 'next/link'
 
 
-export default function AppButton({ icon, label, name }: AppType) {
+export default function AppButton({ icon, label, name, path }: AppType) {
   const [appState, setAppState] = useAtom(appStateAtom)
 
   function handleClick() {
@@ -20,7 +21,7 @@ export default function AppButton({ icon, label, name }: AppType) {
 
 
   return (
-    <button className={styles.button} onClick={handleClick}>
+    <Link href={path} className={styles.button} onClick={handleClick}>
       <Image
         className={styles.image}
         src={icon}
@@ -29,6 +30,6 @@ export default function AppButton({ icon, label, name }: AppType) {
         height={65}
       />
       {label && <span className={styles.label}>{label}</span>}
-    </button>
+    </Link>
   )
 }

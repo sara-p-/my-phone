@@ -6,6 +6,7 @@
   --dark: #353535;
   --transparent-white: rgba(230, 230, 230, 0.5);
   --transparent-black: rgba(36, 36, 36, 0.5);
+  --transparent-dark: rgba(36, 36, 36, 0.9);
   --accent: var(--dark);
   --accent-light: var(--light);
   --loading-light: rgba(182, 182, 182, 0.5);
