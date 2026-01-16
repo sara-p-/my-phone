@@ -11,3 +11,5 @@ export const appStateAtom = atom<AppStateType>({
   calculator: false,
   messages: false,
 })
+
+export const appPanelStateAtom = atom<boolean>(false)

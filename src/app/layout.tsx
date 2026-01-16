@@ -3,6 +3,8 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/layout/Header/Header'
 import styles from './page.module.css'
+import Dock from '@/components/layout/Dock/Dock'
+import AppPanel from '@/components/layout/AppPanel/AppPanel'
 
 const inter = Inter({
   variable: '--font-inter',
@@ -27,6 +29,8 @@ export default function RootLayout({
         <div className={styles.screen}>
           <Header />
           {children}
+          <AppPanel />
+          <Dock />
         </div>
       </body>
     </html>

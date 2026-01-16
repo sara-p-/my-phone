@@ -1,0 +1,27 @@
+.dock {
+  width: auto;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: var(--transparent-black);
+  border-radius: 16px;
+  padding: 16px;
+  border: 1px solid var(--medium);
+  box-shadow: var(--box-shadow);
+}
+
+.button {
+  all: unset;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}

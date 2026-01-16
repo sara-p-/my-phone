@@ -1,13 +1,10 @@
 export type AppStateType = {
-  calendar: boolean
-  instagram: boolean
-  notes: boolean
-  photos: boolean
-  weather: boolean
-  clock: boolean
-  calculator: boolean
-  messages: boolean
+  [key: string]: boolean
 }
 
-export type AppTypes = keyof AppStateType
+export type AppType = {
+  name: string
+  icon: string
+  label: string
+}
 
