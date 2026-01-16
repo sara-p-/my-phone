@@ -8,7 +8,7 @@ export default function AppCard({ icon, label, name, path }: AppType) {
   return <div className={styles.container}>
     <div className={styles.header}>
       <div className={styles.appName}>
-        <Image src={icon} alt={label} width={65} height={65} />
+        <Image src={icon} alt={label} width={30} height={30} />
         <span className={styles.label}>{label}</span>
       </div>
       <FontAwesomeIcon icon={faClose} />
