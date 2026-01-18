@@ -2,26 +2,28 @@
 import styles from './AppButton.module.css'
 import Image from 'next/image'
 import { useAtom } from 'jotai'
-import { appStateAtom } from '@/atoms'
+import { appListAtom, appStateAtom } from '@/atoms'
 import { AppType } from '@/types/appTypes'
 import Link from 'next/link'
+import { useEffect } from 'react'
 
 
 export default function AppButton({ icon, label, name, path }: AppType) {
-  const [appState, setAppState] = useAtom(appStateAtom)
+  const [appList, setAppList] = useAtom(appListAtom)
 
-  function handleClick() {
-    setAppState((prev) => ({
-      ...prev,
-      [name]: !prev[name],
-    }))
+  // Check to see if the clicked app is already in the appList
+  const isAppInList = appList.some((app: AppType) => app.name === name)
 
-    console.log(appState)
+  // Add the clicked app to the appList if it is not already in the list
+  function handleClick({icon, label, name, path}: AppType) {
+    if (!isAppInList) {
+      setAppList([{icon, label, name, path}, ...appList])
+    } 
   }
 
 
   return (
-    <Link href={path} className={styles.button} onClick={handleClick}>
+    <Link href={'#'} className={styles.button} onClick={() => handleClick({icon, label, name, path})}>
       <Image
         className={styles.image}
         src={icon}

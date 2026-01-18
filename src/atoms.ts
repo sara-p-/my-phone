@@ -1,5 +1,5 @@
 import { atom } from 'jotai'
-import { AppStateType } from './types/appTypes'
+import { AppStateType, AppType } from './types/appTypes'
 
 export const appStateAtom = atom<AppStateType>({
   calendar: false,
@@ -13,3 +13,5 @@ export const appStateAtom = atom<AppStateType>({
 })
 
 export const appPanelStateAtom = atom<boolean>(false)
+
+export const appListAtom = atom<AppType[]>([])
