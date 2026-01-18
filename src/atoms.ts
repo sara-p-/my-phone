@@ -15,3 +15,5 @@ export const appStateAtom = atom<AppStateType>({
 export const appPanelStateAtom = atom<boolean>(false)
 
 export const appListAtom = atom<AppType[]>([])
+
+export const activeAppCardAtom = atom<number>(0)

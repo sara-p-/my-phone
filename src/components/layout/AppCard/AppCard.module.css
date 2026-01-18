@@ -5,6 +5,36 @@
   height: auto;
   padding: 16px;
   position: absolute;
+  transition: transform 0.3s ease-in-out;
+}
+
+.container.center {
+  transform: translateX(0);
+  z-index: 3;
+}
+
+.container.right {
+  transform: translateX(50%);
+  z-index: 4;
+}
+
+.container.extra-right {
+  transform: translateX(100%);
+  z-index: 5;
+}
+
+.container.left {
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.container.extra-left {
+  transform: translateX(-100%);
+  z-index: 1;
+}
+
+  .container.hidden {
+  display: none;
 }
 
 .header {
@@ -38,4 +68,15 @@
   padding: 16px;
   border: 1px solid var(--medium);
   box-shadow: var(--box-shadow);
+  display: block;
+  text-decoration: none;
+}
+
+.closeButton {
+  all: unset;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
 }
