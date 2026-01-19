@@ -39,6 +39,12 @@ export default function AppPanel() {
       return 'hidden'
     }
   }
+
+
+  // if the active app card has one more card after it, show the next button
+  const showNextButton = activeAppCard < appList.length - 1
+  // if the active app card has one more card before it, show the previous button
+  const showPreviousButton = activeAppCard > 0
   
   
   
@@ -53,20 +59,17 @@ export default function AppPanel() {
           // Show the app card for each app in the app list
           <AppCard key={app.name} icon={app.icon} label={app.label} name={app.name} path={app.path} position={getPosition(index)} />
         ))}
-      </div>
-      {/* If there are more than 1 app in the app list, show the navigation buttons */}
-      {appList.length > 1 && (
-      <div className={styles.buttons}>
+      </div>     
+      <div className={`${styles.buttons} ${appList.length > 1 ? styles.active : ''}`}>
         <div className={styles.buttonContainer}>
-          <button className={styles.button} onClick={handlePrevious}>
+          <button className={styles.button} disabled={!showPreviousButton} onClick={handlePrevious}>
             <FontAwesomeIcon icon={faChevronLeft} />
           </button>
-          <button className={styles.button} onClick={handleNext}>
+          <button className={styles.button} disabled={!showNextButton} onClick={handleNext}>
             <FontAwesomeIcon icon={faChevronRight} />
           </button>
         </div>
       </div>
-      )}
     </div>
   )
 }

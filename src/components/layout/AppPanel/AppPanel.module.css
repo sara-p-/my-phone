@@ -43,6 +43,12 @@
   align-items: center;
   justify-content: center;
   gap: 16px;
+  opacity: 0;
+  pointer-events: none;
+  &.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
 }
 
 .buttonContainer {
@@ -70,5 +76,11 @@
   &:focus {
     outline: 1px solid var(--primary);
     outline-offset: 2px;
+  }
+  &:disabled {
+    color: var(--medium);
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
   }
 }
