@@ -24,7 +24,7 @@ export default function AppButton({ icon, label, name, path }: AppType) {
 
 
   return (
-    <Link href={'#'} className={styles.button} onClick={() => handleClick({icon, label, name, path})}>
+    <Link href={path} className={styles.button} onClick={() => handleClick({icon, label, name, path})}>
       <Image
         className={styles.image}
         src={icon}
