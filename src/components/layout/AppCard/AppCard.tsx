@@ -5,7 +5,7 @@ import { faClose } from '@fortawesome/free-solid-svg-icons'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useAtom } from 'jotai'
-import { activeAppCardAtom, appListAtom } from '@/atoms'
+import { activeAppCardAtom, appListAtom, appPanelStateAtom } from '@/atoms'
 
 
 type AppCardProps = AppType & {
@@ -17,11 +17,16 @@ export default function AppCard({ icon, label, name, path, position }: AppCardPr
 const [appList, setAppList] = useAtom(appListAtom)
 const index = appList.findIndex((app: AppType) => app.name === name)
 const [activeAppCard, setActiveAppCard] = useAtom(activeAppCardAtom)
+const [appPanelState, setAppPanelState] = useAtom(appPanelStateAtom)
 
 // Remove the app from the app list when the close button is clicked
 function handleClose() {
   setAppList(appList.filter((app: AppType) => app.name !== name))
   setActiveAppCard(activeAppCard - 1 >= 0 ? activeAppCard - 1 : 0)
+}
+// Close the app panel when the card is clicked
+function handleClick() {
+  setAppPanelState(false)
 }
 
 
@@ -37,7 +42,7 @@ function handleClose() {
         <FontAwesomeIcon icon={faClose} />
       </button>
     </div>
-    <Link href={path} className={styles.card}>
+    <Link href={path} className={styles.card} onClick={handleClick}>
       <span className={styles.label}>{label}</span>
     </Link>
   </div>

@@ -28,7 +28,9 @@ export default function RootLayout({
       <body className={`${inter.variable}`}>
         <div className={styles.screen}>
           <Header />
-          {children}
+          <main className={styles.main}>
+            {children}
+          </main>
           <AppPanel />
           <Dock />
         </div>

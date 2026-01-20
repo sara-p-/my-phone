@@ -1,3 +1,4 @@
+'use client'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import styles from './Header.module.css'
 import {
@@ -8,13 +9,22 @@ import {
   faWifi,
 } from '@fortawesome/free-solid-svg-icons'
 import Link from 'next/link'
+import { useAtom } from 'jotai'
+import { appPanelStateAtom } from '@/atoms'
 
 export default function Header() {
+  const [appPanelState, setAppPanelState] = useAtom(appPanelStateAtom)
+
+  // Close the app panel when the home link is clicked
+  function handleClick() {
+    setAppPanelState(false)
+  }
+
   return (
     <header className={styles.header}>
       <div className={styles.headerContainer}>
         <div className={styles.column}>
-          <Link href='/' className={styles.homeLink}>
+          <Link href='/' className={styles.homeLink} onClick={handleClick}>
             <span className='visually-hidden'>Go to home</span>
             <FontAwesomeIcon icon={faHouse} />
           </Link>
