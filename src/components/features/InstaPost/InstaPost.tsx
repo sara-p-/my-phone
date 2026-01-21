@@ -1,5 +1,7 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import styles from './InstaPost.module.css'
 import Image from 'next/image'
+import { faHeart } from '@fortawesome/free-solid-svg-icons'
 
 export default function InstaPost() {
   return (
@@ -9,7 +11,7 @@ export default function InstaPost() {
           <div className={styles.profileImage}>
             <Image src="/profile-image.png" alt="Profile" width={35} height={35} />
           </div>
-          <div className={styles.profileName}>Profile Name</div>
+          <div className={styles.username}>@username</div>
         </div>
         <div className={styles.postImageContainer}>
           <div className={styles.postImage}></div>
@@ -17,9 +19,14 @@ export default function InstaPost() {
         </div>
       </div>
       <div className={styles.postFooter}>
-        <div className={styles.postLikes}></div>
-        <div className={styles.postComments}></div>
-        <div className={styles.postTimestamp}></div>
+        <div className={styles.postLikes}>
+          <FontAwesomeIcon icon={faHeart} />
+          <span className={styles.postLikesCount}>100k</span>
+        </div>
+        <div className={styles.postCaption}>
+          <p className={styles.postCaptionText}><span className={styles.postCaptionUsername}>@username</span> This is a caption</p>
+        </div>
+        <p className={styles.postTimestamp}>2 days ago</p>
       </div>
     </div>
   )
