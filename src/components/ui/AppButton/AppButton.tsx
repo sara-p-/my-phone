@@ -2,7 +2,7 @@
 import styles from './AppButton.module.css'
 import Image from 'next/image'
 import { useAtom } from 'jotai'
-import { activeAppCardAtom, appListAtom } from '@/atoms'
+import { activeAppCardAtom, appListAtom, headerStateAtom } from '@/atoms'
 import { AppType } from '@/types/appTypes'
 import Link from 'next/link'
 
@@ -10,6 +10,8 @@ import Link from 'next/link'
 export default function AppButton({ icon, label, name, path }: AppType) {
   const [appList, setAppList] = useAtom(appListAtom)
   const [activeAppCard, setActiveAppCard] = useAtom(activeAppCardAtom)
+  // Track whether the header background is transparent or not
+  const [headerState, setHeaderState] = useAtom(headerStateAtom)
   // Check to see if the clicked app is already in the appList
   const isAppInList = appList.some((app: AppType) => app.name === name)
 
@@ -20,6 +22,8 @@ export default function AppButton({ icon, label, name, path }: AppType) {
       setAppList([{icon, label, name, path}, ...appList])
     } 
     setActiveAppCard(0)
+    // Set the header background to not transparent
+    setHeaderState(true)
   }
 
 

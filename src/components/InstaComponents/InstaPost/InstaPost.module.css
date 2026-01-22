@@ -22,13 +22,11 @@
   position: absolute;
   top: 0;
   left: 0;
-
   z-index: 100;
-  background-color: var(--transparent-black);
-
-  padding: 8px 16px;
-  border: 1px solid var(--medium);
-  box-shadow: var(--box-shadow);
+  /* background-color: var(--transparent-black); */
+  padding: 16px;
+  /* border: 1px solid var(--medium); */
+  /* box-shadow: var(--box-shadow); */
 }
 
 .profileImage {
@@ -52,6 +50,17 @@
   color: var(--white);
 }
 
+.postImage {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  & > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
 .postFooter {
   width: 100%;
   height: auto;
@@ -60,7 +69,7 @@
   justify-content: space-between;
   flex-direction: column;
   gap: 8px;
-  padding: 8px 16px;
+  padding: 16px;
   background-color: var(--secondary);
 }
 
@@ -101,4 +110,5 @@
   font-weight: 500;
   color: var(--primary);
   text-align: left;
+  margin: 0;
 }
