@@ -4,9 +4,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
 import { useEffect, useState } from 'react'
 
+
 export default function InstaHeader({scrollingContainer}: {scrollingContainer: React.RefObject<HTMLDivElement> | null}) {
-    const [activeHeader, setActiveHeader] = useState(false)
+  const [activeHeader, setActiveHeader] = useState(false)
   const [scrollPosition, setScrollPosition] = useState(0)
+
 
   // Handle the scroll event and set the active header state based on the scroll position
 // This effect will show/hide the header based on what direction the user is scrolling

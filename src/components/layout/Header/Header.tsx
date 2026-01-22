@@ -2,18 +2,21 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import styles from './Header.module.css'
 import {
-  faBatteryThreeQuarters,
-  faHome,
+  faClone,
   faHouse,
   faMoon,
-  faWifi,
 } from '@fortawesome/free-solid-svg-icons'
 import Link from 'next/link'
 import { useAtom } from 'jotai'
-import { appPanelStateAtom } from '@/atoms'
+import {  appPanelStateAtom } from '@/atoms'
 
 export default function Header() {
-  const [appPanelState, setAppPanelState] = useAtom(appPanelStateAtom)
+  const [, setAppPanelState] = useAtom(appPanelStateAtom)
+
+  // Open the app panel when the app panel icon is clicked
+function handleAppPanelIconClick() {
+  setAppPanelState(true)
+}
 
   // Close the app panel when the home link is clicked
   function handleClick() {
@@ -37,7 +40,12 @@ export default function Header() {
         </div>
         <div className={styles.column}>
           <div className={styles.icons}>
-            <FontAwesomeIcon icon={faMoon} />
+            <button className={styles.iconButton} onClick={handleAppPanelIconClick}>
+              <FontAwesomeIcon icon={faClone} />
+            </button>
+            <button className={styles.iconButton}>
+              <FontAwesomeIcon icon={faMoon} />
+            </button>
           </div>
         </div>
       </div>
