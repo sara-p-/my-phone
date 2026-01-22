@@ -11,21 +11,10 @@
   background-repeat: no-repeat;
   border-radius: 48px;
   position: relative;
-  /* overflow: hidden; */
-  &::after {
-    content: '';
-    position: absolute;
-    top: -3px;
-    left: -3px;
-    width: 100%;
-    height: 100%;
-    background-color: transparent;
-    z-index: -1;
-    border-radius: 48px;
-    /* outline: 3px solid var(--white); */
-    pointer-events: none;
-    border: 3px solid var(--white);
-  }
+  border: 5px solid var(--white);
+  outline: 3px solid var(--black);
+  overflow: hidden;
+  box-shadow: var(--box-shadow2);
 }
 
 @media screen and (min-width: 567px) {

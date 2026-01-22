@@ -3,11 +3,19 @@ import styles from './InstaHeader.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
 import { useEffect, useState } from 'react'
+import { headerStateAtom } from '@/atoms'
+import { useAtom } from 'jotai'
 
 
 export default function InstaHeader({scrollingContainer}: {scrollingContainer: React.RefObject<HTMLDivElement> | null}) {
   const [activeHeader, setActiveHeader] = useState(false)
   const [scrollPosition, setScrollPosition] = useState(0)
+  // Track whether the phone screen header background is transparent or not
+  const [headerState, setHeaderState] = useAtom(headerStateAtom)
+  // Set the header background to transparent when the user clicks the close button (that's actually a link to the home page)
+  function handleClick() {
+    setHeaderState(false)
+  }
 
 
   // Handle the scroll event and set the active header state based on the scroll position
@@ -40,7 +48,7 @@ export default function InstaHeader({scrollingContainer}: {scrollingContainer: R
   return (
     <div className={`${styles.header} ${activeHeader ? styles.active : ''}`}>
         <h1>InstaBam</h1>
-        <Link href="/" className={styles.link}>
+        <Link href="/" className={styles.link} onClick={handleClick}>
           <FontAwesomeIcon icon={faTimes} />
         </Link>
     </div>
