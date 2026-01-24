@@ -1,0 +1,124 @@
+.container {
+  all: unset;
+  cursor: pointer;
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  padding: 0 16px;
+  height: 60px;
+}
+
+.left {
+  width: auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.notification {
+  width: 10px;
+  height: 10px;
+  background-color: var(--blue);
+  border-radius: 50%;
+}
+
+.profileImage {
+  width: 40px;
+  height: 40px;
+}
+
+.right {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 4px;
+  border-bottom: 1px solid var(--light);
+  padding-bottom: 8px;
+}
+
+.messageHeader {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.name {
+  font-size: 16px;
+  font-weight: 700;
+  text-shadow: var(--text-shadow);
+  color: var(--primary);
+  margin: 0;
+  padding: 0;
+  letter-spacing: initial;
+}
+
+.actions {
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  font-size: 12px;
+}
+
+.timestamp {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--primary);
+  text-shadow: var(--text-shadow);
+  margin: 0;
+  padding: 0;
+  letter-spacing: initial;
+}
+
+.actionButton {
+  all: unset;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: var(--primary);
+  text-shadow: var(--text-shadow);
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+}
+
+.messageContent {
+  width: 100%;
+  height: 100%;
+  /* display: flex;
+  align-items: center;
+  justify-content: flex-start; */
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow-wrap: break-word;
+  text-wrap: wrap;
+  line-clamp: 2;
+  /* white-space: nowrap; */
+  p {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--primary);
+    text-shadow: var(--text-shadow);
+    margin: 0;
+    padding: 0;
+    line-height: 1.3;
+    text-align: left;
+  }
+}

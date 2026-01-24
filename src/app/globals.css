@@ -4,6 +4,7 @@
   --light: #b6b6b6;
   --medium: #858585;
   --dark: #353535;
+  --blue: #6c92eb;
   --transparent-white: rgba(230, 230, 230, 0.5);
   --transparent-black: rgba(36, 36, 36, 0.5);
   --transparent-dark: rgba(36, 36, 36, 0.9);
@@ -22,8 +23,9 @@
 
   --box-shadow: 5px 5px 10px 0 rgba(36, 36, 36, 0.4);
   --box-shadow2: 5px 5px 15px 5px rgba(36, 36, 36, 0.7);
-  --text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.1),
-    1px 1px 1px rgba(36, 36, 36, 0.5), 2px 2px 2px rgba(36, 36, 36, 0.5);
+  --text-shadow:
+    -1px -1px 1px rgba(255, 255, 255, 0.1), 1px 1px 1px rgba(36, 36, 36, 0.5),
+    2px 2px 2px rgba(36, 36, 36, 0.5);
 
   /* Layout */
   --max-width: 1095px;
