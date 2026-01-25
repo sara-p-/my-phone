@@ -55,6 +55,30 @@
           "timestamp": "12:01 PM"
         }
       ]
+    },
+    {
+      "id": 3,
+      "group": true,
+      "messageName": "The Fellowship of The Bling",
+      "messageImage": "/temp-images/profile-image.png",
+      "messageThread": [
+        {
+          "id": 1,
+          "self": false,
+          "username": "user1",
+          "profileImage": "/temp-images/profile-image.png",
+          "message": "Hello, how are you?",
+          "timestamp": "12:00 PM"
+        },
+        {
+          "id": 2,
+          "self": true,
+          "username": "user2",
+          "profileImage": "/temp-images/profile-image.png",
+          "message": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
+          "timestamp": "12:01 PM"
+        }
+      ]
     }
   ]
 }
