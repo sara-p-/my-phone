@@ -1,13 +1,14 @@
 .container {
   all: unset;
   cursor: pointer;
-  width: auto;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   gap: 8px;
   padding: 0 16px;
   height: 60px;
+  box-sizing: border-box;
 }
 
 .left {
@@ -22,8 +23,11 @@
 .notification {
   width: 10px;
   height: 10px;
-  background-color: var(--blue);
+  background-color: transparent;
   border-radius: 50%;
+  &.notificationActive {
+    background-color: var(--blue);
+  }
 }
 
 .profileImage {

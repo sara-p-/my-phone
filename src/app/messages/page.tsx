@@ -1,16 +1,30 @@
 import MessagePreview from '@/components/MessageComponents/MessagePreview/MessagePreview'
 import styles from './page.module.css'
 import AppHeader from '@/components/layout/AppHeader/AppHeader'
+import MessagePanel from '@/components/MessageComponents/MessagePanel/MessagePanel'
+import messageData from '../../../public/data/messageData.json'
+import { MessageType } from '@/types/messageTypes'
 
 export default function Messages() {
+  const messages: MessageType[] = messageData.messages
+
   return (
-    <div className={styles.container}>
-      <AppHeader label='Messages' />
-      <div className={styles.messagePreviews}>
-        <MessagePreview />
-        <MessagePreview />
-        <MessagePreview />
+    <main className={styles.main}>
+      <MessagePanel />
+      <div className={styles.container}>
+        <AppHeader label='Messages' />
+        <div className={styles.messagePreviews}>
+          {messages.map((messagePreview, index) => {
+            return (
+              <MessagePreview
+                key={messagePreview.id}
+                message={messagePreview}
+                index={index}
+              />
+            )
+          })}
+        </div>
       </div>
-    </div>
+    </main>
   )
 }

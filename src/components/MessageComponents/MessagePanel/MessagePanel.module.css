@@ -1,0 +1,16 @@
+.panel {
+  width: 100%;
+  height: 100%;
+  background-color: var(--secondary);
+  border-radius: 48px;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+  &.active {
+    transform: translateX(0);
+  }
+}

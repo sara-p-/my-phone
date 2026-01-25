@@ -1,0 +1,60 @@
+{
+  "messages": [
+    {
+      "id": 1,
+      "group": true,
+      "messageName": "Grrltalk",
+      "messageImage": "/temp-images/profile-image.png",
+      "messageThread": [
+        {
+          "id": 1,
+          "self": false,
+          "username": "user1",
+          "profileImage": "/temp-images/profile-image.png",
+          "message": "Hello, how are you?",
+          "timestamp": "12:00 PM"
+        },
+        {
+          "id": 2,
+          "self": false,
+          "username": "user2",
+          "profileImage": "/temp-images/profile-image.png",
+          "message": "I'm good, thank you!",
+          "timestamp": "12:01 PM"
+        },
+        {
+          "id": 3,
+          "self": true,
+          "username": "user3",
+          "profileImage": "/temp-images/profile-image.png",
+          "message": "Fuck yeah",
+          "timestamp": "12:02 PM"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "group": false,
+      "messageName": "John Doe",
+      "messageImage": "/temp-images/profile-image.png",
+      "messageThread": [
+        {
+          "id": 1,
+          "self": false,
+          "username": "user1",
+          "profileImage": "/temp-images/profile-image.png",
+          "message": "Hello, how are you?",
+          "timestamp": "12:00 PM"
+        },
+        {
+          "id": 2,
+          "self": true,
+          "username": "user2",
+          "profileImage": "/temp-images/profile-image.png",
+          "message": "I'm good, thank you!",
+          "timestamp": "12:01 PM"
+        }
+      ]
+    }
+  ]
+}
