@@ -9,7 +9,7 @@
         {
           "id": 1,
           "self": false,
-          "username": "user1",
+          "username": "user2",
           "profileImage": "/temp-images/profile-image.png",
           "message": "Hello, how are you?",
           "timestamp": "12:00 PM"
@@ -17,7 +17,7 @@
         {
           "id": 2,
           "self": false,
-          "username": "user2",
+          "username": "user3",
           "profileImage": "/temp-images/profile-image.png",
           "message": "I'm good, thank you!",
           "timestamp": "12:01 PM"
@@ -25,9 +25,9 @@
         {
           "id": 3,
           "self": true,
-          "username": "user3",
+          "username": "user1",
           "profileImage": "/temp-images/profile-image.png",
-          "message": "Fuck yeah",
+          "message": "Fuck yeah. I'm gonna lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
           "timestamp": "12:02 PM"
         }
       ]
@@ -41,7 +41,7 @@
         {
           "id": 1,
           "self": false,
-          "username": "user1",
+          "username": "user4",
           "profileImage": "/temp-images/profile-image.png",
           "message": "Hello, how are you?",
           "timestamp": "12:00 PM"
@@ -49,7 +49,7 @@
         {
           "id": 2,
           "self": true,
-          "username": "user2",
+          "username": "user1",
           "profileImage": "/temp-images/profile-image.png",
           "message": "I'm good, thank you!",
           "timestamp": "12:01 PM"
@@ -65,7 +65,7 @@
         {
           "id": 1,
           "self": false,
-          "username": "user1",
+          "username": "user5",
           "profileImage": "/temp-images/profile-image.png",
           "message": "Hello, how are you?",
           "timestamp": "12:00 PM"
@@ -73,7 +73,7 @@
         {
           "id": 2,
           "self": true,
-          "username": "user2",
+          "username": "user1",
           "profileImage": "/temp-images/profile-image.png",
           "message": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
           "timestamp": "12:01 PM"

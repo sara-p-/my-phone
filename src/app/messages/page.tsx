@@ -10,7 +10,9 @@ export default function Messages() {
 
   return (
     <main className={styles.main}>
-      <MessagePanel />
+      {messages.map((message) => {
+        return <MessagePanel key={message.id} message={message} />
+      })}
       <div className={styles.container}>
         <AppHeader label='Messages' />
         <div className={styles.messagePreviews}>

@@ -1,0 +1,57 @@
+.messageItem {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  &.self {
+    justify-content: flex-end;
+  }
+}
+
+.messageItemContent {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: 8px;
+}
+
+.profileImage {
+  width: 23px;
+  height: 23px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+}
+
+.messageTextContainer {
+  width: auto;
+  max-width: 275px;
+  height: auto;
+  background-color: var(--dark);
+  border-radius: 16px;
+  padding: 8px 16px;
+}
+
+.messageText {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--primary);
+  text-shadow: var(--text-shadow);
+  margin: 0;
+  padding: 0;
+}
+
+.self {
+  .messageTextContainer {
+    background-color: var(--blue);
+  }
+  .profileImage {
+    display: none;
+  }
+  .messageItemContent {
+    justify-content: flex-end;
+  }
+}

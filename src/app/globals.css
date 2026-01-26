@@ -4,7 +4,7 @@
   --light: #b6b6b6;
   --medium: #858585;
   --dark: #353535;
-  --blue: #6c92eb;
+  --blue: #4172e5;
   --transparent-white: rgba(230, 230, 230, 0.5);
   --transparent-black: rgba(36, 36, 36, 0.5);
   --transparent-dark: rgba(36, 36, 36, 0.9);
@@ -12,6 +12,9 @@
   --accent-light: var(--light);
   --loading-light: rgba(182, 182, 182, 0.5);
   --loading-dark: rgba(36, 36, 36, 0.5);
+
+  --header-height: 62px;
+  --message-panel-header-height: 72px;
 
   /* Typography */
   --font-size: 16px;
@@ -130,14 +133,14 @@ p {
 
 h1,
 .h1 {
-  font-size: 36px;
+  font-size: 32px;
   letter-spacing: -1px;
   line-height: 1.2;
   font-weight: 700;
   margin: 0;
 
   @media (min-width: 768px) {
-    font-size: 38px;
+    font-size: 32px;
     letter-spacing: -1.5px;
     line-height: 1;
   }

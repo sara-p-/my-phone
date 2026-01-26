@@ -1,8 +1,11 @@
+'use client'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import styles from './MessagePreview.module.css'
 import Image from 'next/image'
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import { MessageType } from '@/types/messageTypes'
+import { activeMessagePanelAtom } from '@/atoms'
+import { useAtom } from 'jotai'
 
 type MessagePreviewProps = {
   message: MessageType
@@ -13,10 +16,16 @@ export default function MessagePreview({
   message,
   index,
 }: MessagePreviewProps) {
+  const [, setActiveMessagePanel] = useAtom(activeMessagePanelAtom)
+
   const lastMessage = message.messageThread[message.messageThread.length - 1]
 
+  function handleClick() {
+    setActiveMessagePanel(message.id)
+  }
+
   return (
-    <button className={styles.container}>
+    <button className={styles.container} onClick={handleClick}>
       <div className={styles.left}>
         <div
           className={`${styles.notification} ${index === 0 ? styles.notificationActive : ''}`}
