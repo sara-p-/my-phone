@@ -3,31 +3,55 @@
     {
       "id": 1,
       "group": true,
-      "messageName": "Grrltalk",
+      "messageName": "SKD",
       "messageImage": "/temp-images/profile-image.png",
       "messageThread": [
         {
           "id": 1,
           "self": false,
-          "username": "user2",
+          "username": "SKD",
           "profileImage": "/temp-images/profile-image.png",
-          "message": "Hello, how are you?",
+          "message": "What do you think is the sexiest type of soup?",
           "timestamp": "12:00 PM"
         },
         {
           "id": 2,
-          "self": false,
-          "username": "user3",
+          "self": true,
+          "username": "SLP",
           "profileImage": "/temp-images/profile-image.png",
-          "message": "I'm good, thank you!",
+          "message": "Oooooooo tough question",
           "timestamp": "12:01 PM"
         },
         {
           "id": 3,
           "self": true,
-          "username": "user1",
+          "username": "SLP",
           "profileImage": "/temp-images/profile-image.png",
-          "message": "Fuck yeah. I'm gonna lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
+          "message": "Like out of all the soups ever?",
+          "timestamp": "12:02 PM"
+        },
+        {
+          "id": 4,
+          "self": false,
+          "username": "SKD",
+          "profileImage": "/temp-images/profile-image.png",
+          "message": "yeah",
+          "timestamp": "12:02 PM"
+        },
+        {
+          "id": 5,
+          "self": true,
+          "username": "SLP",
+          "profileImage": "/temp-images/profile-image.png",
+          "message": "Fuck",
+          "timestamp": "12:02 PM"
+        },
+        {
+          "id": 5,
+          "self": true,
+          "username": "SLP",
+          "profileImage": "/temp-images/profile-image.png",
+          "message": "French onion?",
           "timestamp": "12:02 PM"
         }
       ]

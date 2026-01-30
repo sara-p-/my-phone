@@ -6,7 +6,6 @@ import { activeAppCardAtom, appListAtom, headerStateAtom } from '@/atoms'
 import { AppType } from '@/types/appTypes'
 import Link from 'next/link'
 
-
 export default function AppButton({ icon, label, name, path }: AppType) {
   const [appList, setAppList] = useAtom(appListAtom)
   const [activeAppCard, setActiveAppCard] = useAtom(activeAppCardAtom)
@@ -17,18 +16,21 @@ export default function AppButton({ icon, label, name, path }: AppType) {
 
   // Add the clicked app to the appList if it is not already in the list
   // Also set the activeAppCard to the clicked app so that it can show first in the AppPanel
-  function handleClick({icon, label, name, path}: AppType) {
+  function handleClick({ icon, label, name, path }: AppType) {
     if (!isAppInList) {
-      setAppList([{icon, label, name, path}, ...appList])
-    } 
+      setAppList([{ icon, label, name, path }, ...appList])
+    }
     setActiveAppCard(0)
     // Set the header background to not transparent
-    setHeaderState(true)
+    // setHeaderState(true)
   }
 
-
   return (
-    <Link href={path} className={styles.button} onClick={() => handleClick({icon, label, name, path})}>
+    <Link
+      href={path}
+      className={styles.button}
+      onClick={() => handleClick({ icon, label, name, path })}
+    >
       <Image
         className={styles.image}
         src={icon}

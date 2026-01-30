@@ -17,8 +17,11 @@ export default function SingleMessage({ message }: SingleMessageProps) {
           height={23}
           className={styles.profileImage}
         />
-        <div className={styles.messageTextContainer}>
-          <p className={styles.messageText}>{message.message}</p>
+        <div className={styles.messageContainer}>
+          <p className={styles.username}>{message.username}</p>
+          <div className={styles.messageTextContainer}>
+            <p className={styles.messageText}>{message.message}</p>
+          </div>
         </div>
       </div>
     </div>

@@ -6,6 +6,7 @@
   justify-content: flex-start;
   align-items: center;
   padding-top: 63px;
+  background-color: var(--secondary);
   overflow: hidden;
 }
 
@@ -21,27 +22,6 @@
   border-bottom-left-radius: 48px;
   border-bottom-right-radius: 48px;
   overflow: hidden;
-}
-
-.header {
-  width: 100%;
-  height: auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 16px;
-  border-bottom: 1px solid var(--medium);
-  box-shadow: var(--box-shadow);
-  background-color: var(--black);
-  z-index: 101;
-  transition: transform 0.3s ease-in-out;
-  &.active {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    transform: translateY(-100%);
-  }
 }
 
 .button {

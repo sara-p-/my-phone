@@ -26,13 +26,47 @@
   box-shadow: var(--box-shadow);
 }
 
+.messageContainer {
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 2px;
+}
+
+.username {
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--primary);
+  text-shadow: var(--text-shadow);
+  margin: 0;
+  padding: 0 0 0 8px;
+}
+
 .messageTextContainer {
   width: auto;
   max-width: 275px;
   height: auto;
   background-color: var(--dark);
   border-radius: 16px;
+  border-bottom-left-radius: 8px;
   padding: 8px 16px;
+  position: relative;
+}
+
+.messageTextContainer::before {
+  content: '';
+  position: absolute;
+  top: calc(100% - 18px);
+  left: -4px;
+  /* transform: translateY(calc(50% - 8px)); */
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-right: 8px solid var(--dark);
 }
 
 .messageText {
@@ -45,8 +79,22 @@
 }
 
 .self {
+  .username {
+    display: none;
+  }
   .messageTextContainer {
     background-color: var(--blue);
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 8px;
+  }
+  .messageTextContainer::before {
+    border-right: 8px solid var(--blue);
+    left: auto;
+    right: -4px;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-right: none;
+    border-left: 8px solid var(--blue);
   }
   .profileImage {
     display: none;
