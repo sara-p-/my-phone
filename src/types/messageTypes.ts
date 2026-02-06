@@ -15,3 +15,8 @@ export type MessageThreadType = {
   message: string
   timestamp: string
 }
+
+export type MessageNotificationStatueType = {
+  id: number
+  notification: boolean
+}
