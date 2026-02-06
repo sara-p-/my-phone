@@ -32,11 +32,11 @@ export const messageNotificationStateAtom = atomWithStorage<
 // Update the state of the notification for the active message panel
 export const updateMessageNotificationStateAtom = atom(
   (get) => get(messageNotificationStateAtom),
-  (get, set, id: number) => {
+  (get, set, id: number, notification: boolean) => {
     const messageState = get(messageNotificationStateAtom)
     const newMessageState = messageState.map((message) => {
       if (message.id === id) {
-        return { ...message, notification: false }
+        return { ...message, notification: notification }
       }
       return message
     })

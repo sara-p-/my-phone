@@ -26,7 +26,7 @@
   height: auto;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   padding: 8px 16px;
   position: absolute;
   top: 63px;
@@ -35,12 +35,15 @@
   z-index: 101;
 }
 
-.actions {
-  width: auto;
-  height: auto;
-  position: absolute;
-  left: 16px;
-  top: 20px;
+.notificationButton {
+  all: unset;
+  cursor: pointer;
+  font-size: 28px;
+  color: var(--blue);
+  text-shadow: var(--text-shadow);
+  &:hover {
+    color: var(--transparent-white);
+  }
 }
 
 .backButton {

@@ -19,7 +19,7 @@ export default function Messages() {
           {messages.map((messagePreview) => {
             return (
               <MessagePreview
-                key={messagePreview.id}
+                key={`message-preview-${messagePreview.id}`}
                 message={messagePreview}
               />
             )

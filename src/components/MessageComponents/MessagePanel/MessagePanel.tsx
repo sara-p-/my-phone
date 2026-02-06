@@ -1,11 +1,14 @@
 'use client'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import styles from './MessagePanel.module.css'
-import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
+import { faChevronLeft, faCirclePlus } from '@fortawesome/free-solid-svg-icons'
 import Image from 'next/image'
 import { MessageType } from '@/types/messageTypes'
 import SingleMessage from '../SingleMessage/SingleMessage'
-import { activeMessagePanelAtom } from '@/atoms'
+import {
+  activeMessagePanelAtom,
+  updateMessageNotificationStateAtom,
+} from '@/atoms'
 import { useAtom } from 'jotai'
 
 type MessagePanelProps = {
@@ -13,6 +16,11 @@ type MessagePanelProps = {
 }
 
 export default function MessagePanel({ message }: MessagePanelProps) {
+  // Update the atom that tracks which message preview hasn't been read (and thus has an 'activeNotification' class)
+  const [messageNotificationState, updateMessageNotificationState] = useAtom(
+    updateMessageNotificationStateAtom
+  )
+  // Update the atom that tracks which message panel is currently active
   const [activeMessagePanel, setActiveMessagePanel] = useAtom(
     activeMessagePanelAtom
   )
@@ -20,6 +28,11 @@ export default function MessagePanel({ message }: MessagePanelProps) {
   // Close the message panel and go back to the message preview page
   function handleBack() {
     setActiveMessagePanel(null)
+  }
+
+  // When the user clicks on the nofitication button, update the atom that tracks which message preview hasn't been read, based on the message.id of the messagePreview that has been clicked
+  function handleNotificationClick() {
+    updateMessageNotificationState(message.id, true)
   }
 
   return (
@@ -30,11 +43,9 @@ export default function MessagePanel({ message }: MessagePanelProps) {
     >
       <div className={styles.container}>
         <div className={styles.header}>
-          <div className={styles.actions}>
-            <button className={styles.backButton} onClick={handleBack}>
-              <FontAwesomeIcon icon={faChevronLeft} />
-            </button>
-          </div>
+          <button className={styles.backButton} onClick={handleBack}>
+            <FontAwesomeIcon icon={faChevronLeft} />
+          </button>
           <div className={styles.profileContainer}>
             <Image
               src={message.messageImage}
@@ -47,6 +58,12 @@ export default function MessagePanel({ message }: MessagePanelProps) {
               <h2 className={styles.nameText}>{message.messageName}</h2>
             </div>
           </div>
+          <button
+            className={styles.notificationButton}
+            onClick={handleNotificationClick}
+          >
+            <FontAwesomeIcon icon={faCirclePlus} />
+          </button>
         </div>
         <div className={styles.messageThread}>
           {message.messageThread.map((singleMessage, index) => {
@@ -57,7 +74,7 @@ export default function MessagePanel({ message }: MessagePanelProps) {
             const lastUser = singleMessage.username !== nextMessage?.username
             return (
               <SingleMessage
-                key={singleMessage.id}
+                key={`${singleMessage.id}-${index}`}
                 message={singleMessage}
                 sameUser={sameUser}
                 lastUser={lastUser}

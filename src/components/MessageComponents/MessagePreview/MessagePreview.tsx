@@ -28,7 +28,7 @@ export default function MessagePreview({ message }: MessagePreviewProps) {
     // Set the active message panel based on which message preview was clicked
     setActiveMessagePanel(message.id)
     // Update the atom that tracks which message preview hasn't been read, based on the message.id of the messagePreview that has been clicked
-    updateMessageNotificationState(message.id)
+    updateMessageNotificationState(message.id, false)
   }
 
   // Get the notification state for the message preview by reading the atom that tracks the message states
