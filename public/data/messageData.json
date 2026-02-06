@@ -1,8 +1,74 @@
 {
   "messages": [
     {
+      "id": 3,
+      "group": true,
+      "notification": true,
+      "messageName": "Grrltalk",
+      "messageImage": "/temp-images/profile-image.png",
+      "messageThread": [
+        {
+          "id": 1,
+          "self": true,
+          "username": "SLP",
+          "profileImage": "/temp-images/profile-image.png",
+          "message": "'He's like the bad boy of British gardening' - SKD",
+          "timestamp": "12:00 PM"
+        },
+        {
+          "id": 2,
+          "self": false,
+          "username": "MW",
+          "profileImage": "/temp-images/profile-image.png",
+          "message": "Is he a hoe?",
+          "timestamp": "12:01 PM"
+        },
+        {
+          "id": 3,
+          "self": false,
+          "username": "MW",
+          "profileImage": "/temp-images/profile-image.png",
+          "message": "A bit rakish?",
+          "timestamp": "12:01 PM"
+        },
+        {
+          "id": 4,
+          "self": false,
+          "username": "BE",
+          "profileImage": "/temp-images/profile-image.png",
+          "message": "A little hatchet-faced?",
+          "timestamp": "12:01 PM"
+        },
+        {
+          "id": 5,
+          "self": false,
+          "username": "MW",
+          "profileImage": "/temp-images/profile-image.png",
+          "message": "Bit of a hedge-trimmer?",
+          "timestamp": "12:01 PM"
+        },
+        {
+          "id": 6,
+          "self": false,
+          "username": "MW",
+          "profileImage": "/temp-images/profile-image.png",
+          "message": "A grower AND a shower?",
+          "timestamp": "12:01 PM"
+        },
+        {
+          "id": 7,
+          "self": false,
+          "username": "BE",
+          "profileImage": "/temp-images/profile-image.png",
+          "message": "I'm rooting for this guy",
+          "timestamp": "12:01 PM"
+        }
+      ]
+    },
+    {
       "id": 1,
       "group": true,
+      "notification": true,
       "messageName": "SKD",
       "messageImage": "/temp-images/profile-image.png",
       "messageThread": [
@@ -59,48 +125,59 @@
     {
       "id": 2,
       "group": false,
-      "messageName": "John Doe",
+      "notification": false,
+      "messageName": "Dad",
       "messageImage": "/temp-images/profile-image.png",
       "messageThread": [
         {
           "id": 1,
-          "self": false,
-          "username": "user4",
+          "self": true,
+          "username": "SLP",
           "profileImage": "/temp-images/profile-image.png",
-          "message": "Hello, how are you?",
+          "message": "Are you awake at like 7:30am?",
           "timestamp": "12:00 PM"
         },
         {
           "id": 2,
-          "self": true,
-          "username": "user1",
+          "self": false,
+          "username": "Dad",
           "profileImage": "/temp-images/profile-image.png",
-          "message": "I'm good, thank you!",
+          "message": "Sometimes",
           "timestamp": "12:01 PM"
         }
       ]
     },
+
     {
-      "id": 3,
+      "id": 4,
       "group": true,
-      "messageName": "The Fellowship of The Bling",
+      "notification": false,
+      "messageName": "Fellowship of the Bling",
       "messageImage": "/temp-images/profile-image.png",
       "messageThread": [
         {
           "id": 1,
-          "self": false,
-          "username": "user5",
+          "self": true,
+          "username": "SLP",
           "profileImage": "/temp-images/profile-image.png",
-          "message": "Hello, how are you?",
+          "message": "I can't remember if I told y'all this or not, but instagram was advertising a book to me and this was the description:",
           "timestamp": "12:00 PM"
         },
         {
           "id": 2,
           "self": true,
-          "username": "user1",
+          "username": "SLP",
           "profileImage": "/temp-images/profile-image.png",
-          "message": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
-          "timestamp": "12:01 PM"
+          "message": "'Surviving a plane crash, wolves, avalanches, frozen lakes, and a harsh winter with three feral men is nothing compared to Aurelia's hardest trial of all–finding herself.'",
+          "timestamp": "12:00 PM"
+        },
+        {
+          "id": 3,
+          "self": false,
+          "username": "SC",
+          "profileImage": "/temp-images/profile-image.png",
+          "message": "Finding herself must be pretty difficult considering all those other things.",
+          "timestamp": "12:00 PM"
         }
       ]
     }

@@ -1,6 +1,7 @@
 export type MessageType = {
   id: number
   group: boolean
+  notification: boolean
   messageName: string
   messageImage: string
   messageThread: MessageThreadType[]

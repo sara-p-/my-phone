@@ -4,11 +4,21 @@ import Image from 'next/image'
 
 type SingleMessageProps = {
   message: MessageThreadType
+  sameUser: boolean
+  lastUser: boolean
 }
 
-export default function SingleMessage({ message }: SingleMessageProps) {
+export default function SingleMessage({
+  message,
+  sameUser,
+  lastUser,
+}: SingleMessageProps) {
   return (
-    <div className={`${styles.messageItem} ${message.self ? styles.self : ''}`}>
+    <div
+      className={`${styles.messageItem} ${message.self ? styles.self : ''} ${
+        sameUser ? styles.sameUser : styles.differentUser
+      } ${lastUser ? styles.lastUser : ''}`}
+    >
       <div className={styles.messageItemContent}>
         <Image
           src={message.profileImage}

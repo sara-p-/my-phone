@@ -16,12 +16,11 @@ export default function Messages() {
       <div className={styles.container}>
         <AppHeader label='Messages' />
         <div className={styles.messagePreviews}>
-          {messages.map((messagePreview, index) => {
+          {messages.map((messagePreview) => {
             return (
               <MessagePreview
                 key={messagePreview.id}
                 message={messagePreview}
-                index={index}
               />
             )
           })}

@@ -9,13 +9,9 @@ import { useAtom } from 'jotai'
 
 type MessagePreviewProps = {
   message: MessageType
-  index: number
 }
 
-export default function MessagePreview({
-  message,
-  index,
-}: MessagePreviewProps) {
+export default function MessagePreview({ message }: MessagePreviewProps) {
   const [, setActiveMessagePanel] = useAtom(activeMessagePanelAtom)
 
   const lastMessage = message.messageThread[message.messageThread.length - 1]
@@ -28,7 +24,9 @@ export default function MessagePreview({
     <button className={styles.container} onClick={handleClick}>
       <div className={styles.left}>
         <div
-          className={`${styles.notification} ${index === 0 ? styles.notificationActive : ''}`}
+          className={`${styles.notification} ${
+            message.notification ? styles.notificationActive : ''
+          }`}
         ></div>
         <div className={styles.profileImage}>
           <Image
