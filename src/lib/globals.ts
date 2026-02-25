@@ -17,7 +17,7 @@ export const APP_TYPES: AppType[] = [
     name: 'notes',
     icon: '/temp-images/app-icon3.png',
     label: 'Notes',
-    path: '#',
+    path: '/notes',
   },
   {
     name: 'photos',

@@ -1,0 +1,12 @@
+{
+  "notes": [
+    {
+      "id": 1,
+      "title": "Note 1",
+      "date": "2026-02-23",
+      "time": "12:03",
+      "previewText": "This is a preview text",
+      "folderName": "Folder 1"
+    }
+  ]
+}
