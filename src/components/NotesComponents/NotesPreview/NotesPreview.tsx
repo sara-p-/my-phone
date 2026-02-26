@@ -4,7 +4,7 @@ type NotesPreviewProps = {
   title: string
   date: string
   time: string
-  previewText: string
+  content: string
   folderName: string
 }
 
@@ -12,18 +12,27 @@ export default function NotesPreview({
   title,
   date,
   time,
-  previewText,
+  content,
   folderName,
 }: NotesPreviewProps) {
-  return (
-    <button className={styles.previewButton}>
-      <div className={styles.previewHeader}>
-        {title && <h1>{title}</h1>}
+  // Get the preview content for the note by truncating the content to 30 characters
+  const previewContent =
+    content.length > 30 ? content.substring(0, 30) + '...' : content
 
-        <p>
-          <span>Date or Time</span> <span>preview text</span>
+  // If there's a title, use it. Otherwise use the regular content in place of the title.
+  const titleContent = title ? title : previewContent.substring(0, 10) + '...'
+
+  return (
+    <button className={styles.button}>
+      <div className={styles.header}>
+        <h1 className={styles.title}>{titleContent}</h1>
+        <p className={styles.content}>
+          <span className={styles.date}>
+            {date} {time}
+          </span>
+          {title && <span className={styles.content}>{previewContent}</span>}
         </p>
-        <p>Folder Name</p>
+        <p className={styles.folderName}>{folderName}</p>
       </div>
     </button>
   )
